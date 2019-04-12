@@ -16,7 +16,7 @@ onHostRule = true
   delayBeforeCheck = 0
 ```
 
-And at run time:
+And at run time pass the EXEC_PATH variable for the script and your credentials for CPanel:
 
 ```
 docker run -d \
