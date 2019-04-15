@@ -53,3 +53,11 @@ export CPANELDNS_AUTH_ID="MY_Account"
 export CPANELDNS_AUTH_PASSWORD="My_Password"
 export CPANELDNS_API="https://www.example.com:2083/"
 ```
+
+Docker-compose:
+If these variables are put into a hidden file they can be used inside a docker-compose file like this:
+```
+env_file:
+ - /data/docker/traefik/.credentials.sh
+```
+For an example see: https://gogs.int.kdedesign.nl/kdedesign/docker-compose
