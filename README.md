@@ -60,4 +60,4 @@ If these variables are put into a hidden file they can be used inside a docker-c
 env_file:
  - /data/docker/traefik/.credentials.sh
 ```
-For an example see: https://gogs.int.kdedesign.nl/kdedesign/docker-compose
+For an example see: https://github.com/kdeenkhoorn/docker-compose
