@@ -124,7 +124,7 @@ env_file:
  - /data/docker/traefik/.credentials.sh
 ```
 
-#Tips 
+# Tips 
 
 ## WGET generates an invalid header message
 wget generates an error complaining the header is invalid when your password or api key is to long. Because of this the base64 command wil split into multiple lines resulting in a header error.  
