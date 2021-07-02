@@ -124,5 +124,27 @@ env_file:
  - /data/docker/traefik/.credentials.sh
 ```
 
+#Tips 
 
-For an example see: https://github.com/kdeenkhoorn/docker-compose
+## WGET generates an invalid header message
+wget generates an error complaining the header is invalid when your password or api key is to long. Because of this the base64 command wil split into multiple lines resulting in a header error.  
+What you can do in that case is pick a shorter password or api key or modify the header generation code a bit.
+
+You can do the following like i have done:
+
+1) Log on to a linux box and generate the base64 encoded `[username]:[password]` string your self with
+```
+printf "%s" "[USERNAME]:[PASSWORD]" | base64 -w 0
+```
+2) Create a new variable like `PANELDNS_AUTH_STRING` in your `.credentials.sh` file like:
+```
+PANELDNS_AUTH_STRING=[BASE64_ENCODED_STRING]
+```
+3) Replace the line staring with `HEADER=` with:
+```
+HEADER="Authorization: Basic ${PANELDNS_AUTH_STRING}"
+
+```
+And you're done!
+
+For an usage example see: https://github.com/kdeenkhoorn/docker-compose
