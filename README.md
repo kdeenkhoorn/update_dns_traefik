@@ -140,7 +140,7 @@ printf "%s" "[USERNAME]:[PASSWORD]" | base64 -w 0
 ```
 PANELDNS_AUTH_STRING=[BASE64_ENCODED_STRING]
 ```
-3) Replace the line staring with `HEADER=` with:
+3) Replace the line starting with `HEADER=` with:
 ```
 HEADER="Authorization: Basic ${PANELDNS_AUTH_STRING}"
 
